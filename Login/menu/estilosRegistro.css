@@ -1,0 +1,89 @@
+/* Estilos para el cuerpo del documento */
+.background {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(90deg, rgba(174, 230, 238, 1) 0%, rgb(221, 219, 110) 44%, rgba(99, 157, 224, 1) 100%);
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/691/170/464/fondos-de-pantalla-color-azul-abstract-wallpaper-preview.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra verticalmente */
+  }
+  
+  /* Estilos para el contenedor centrado */
+  .center-container {
+    text-align: center; /* Centrar el texto dentro del contenedor */
+  }
+  
+  /* Estilos para la caja del formulario */
+  .box {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    width: 350px; /* Ancho para el formulario */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar la caja */
+  }
+  
+  .box h1 {
+    color: rgb(70, 91, 185);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+  }
+  
+  /* Estilos para todos los campos de entrada */
+  .input-text,
+  .input-password {
+    border: 0;
+    background: rgb(196, 174, 238);
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px;
+    width: 250px; /* Ancho estándar para los campos */
+    outline: none;
+    color: rgb(20, 20, 20);
+    border-radius: 24px;
+    transition: 0.25s;
+  }
+  
+  .input-text:focus,
+  .input-password:focus {
+    width: 300px; /* Cambio de ancho al enfocar */
+    border-color: #064b83; /* Cambio de color del borde */
+  }
+  
+  /* Estilos para el botón de envío */
+  .submit-btn {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #1721b3;
+    padding: 14px 40px;
+    outline: none;
+    color: rgb(38, 202, 112);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background: #625dc5; /* Color al hacer hover */
+    color: white; /* Cambio de color del texto al hacer hover */
+  }
+  
+  /* Estilos para el enlace "Ingresar" */
+.text-primary {
+  color: rgb(27, 112, 138); /* Cambio de color del texto a azul claro */
+  text-decoration: none; /* Eliminar subrayado */
+}
+
+.text-primary:hover {
+  text-decoration: underline; /* Subrayado al hacer hover */
+}
+  

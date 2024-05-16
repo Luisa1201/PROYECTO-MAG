@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: rgb(238, 174, 202);
+  background: rgb(174, 230, 238);
+  background: linear-gradient(90deg, rgba(174, 230, 238, 1) 0%, rgb(221, 219, 110) 44%, rgba(99, 157, 224, 1) 100%);
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/691/170/464/fondos-de-pantalla-color-azul-abstract-wallpaper-preview.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  margin-bottom: 20px;
+  border: none;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  background: rgb(196, 174, 238);
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 10px 10px;
+  width: 250px;
+  outline: none;
+  color: rgb(20, 20, 20);
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box h1 {
+  color: rgb(70, 91, 185);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 300px;
+  border-color: #064b83;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #1721b3;
+  padding: 14px 40px;
+  outline: none;
+  color: rgb(38, 202, 112);
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #625dc5;
+}
+
+.forgot {
+  text-decoration: underline;
+}
