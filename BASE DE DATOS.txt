@@ -1,0 +1,37 @@
+CREATE TABLE usuarios (
+    id SERIAL,
+    nombre VARCHAR(50),
+    correo VARCHAR(50),
+    usuario VARCHAR(20),
+    contrasena VARCHAR(20),
+    PRIMARY KEY (id),  -- Clave primaria autoincremental
+    CONSTRAINT nombre_longitud_minima CHECK (char_length(nombre) >= 3),  -- Longitud mínima para el nombre
+    CONSTRAINT correo_unico UNIQUE (correo),  -- Correo único
+    CONSTRAINT correo_longitud_minima CHECK (char_length(correo) >= 5),  -- Longitud mínima para el correo
+    CONSTRAINT usuario_unico UNIQUE (usuario),  -- Usuario único
+    CONSTRAINT usuario_longitud_minima CHECK (char_length(usuario) >= 3),  -- Longitud mínima para el usuario
+    CONSTRAINT contrasena_unico UNIQUE (contrasena),  -- Contraseña única
+    CONSTRAINT contrasena_longitud_minima CHECK (char_length(contrasena) >= 3)  -- Longitud mínima para la contraseña
+);
+
+
+
+CREATE TABLE clientes (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellidos VARCHAR(50) NOT NULL,
+    cedula VARCHAR(20) UNIQUE NOT NULL,
+    nit VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    estado VARCHAR(10) CHECK (estado IN ('activo', 'inactivo')) NOT NULL
+);
+select * from clientes;
+select * from usuarios;
+
+-- Para borrar todos los datos de la tabla clientes
+DELETE FROM clientes;
+
+-- Para borrar todos los datos de la tabla usuarios
+DELETE FROM usuarios; base de datos
