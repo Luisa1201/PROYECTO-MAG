@@ -1,0 +1,12 @@
+/* Modo Oscuro por defecto */
+
+/* Fondo de la barra lateral */
+.dashboard-sideBar-ct {
+    background: url('../assets/img/fondo - copia.jpeg') !important;
+}
+
+/* Fondo de la barra de navegación - Modo Oscuro */
+.dashboard-Navbar {
+    background-color: #2b333d !important;
+    color: #ffffff; /* Color del texto en modo oscuro */
+}

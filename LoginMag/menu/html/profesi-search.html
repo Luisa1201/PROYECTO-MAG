@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Profesionales</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				EMPRESA <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<img src="https://cdn-icons-png.freepik.com/512/7156/7156772.png?ga=GA1.1.475507919.1716614048"
+						alt="UserIcon">
+					<figcaption class="text-center text-titles">MAG</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="../html/my-data.html" title="Mis datos">
+							<i class="zmdi zmdi-account-circle"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#!" title="Salir del sistema" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a href="../html/home.html">
+
+						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
+					</a>
+				</li>
+				<li>
+					<a href="../html/profesio.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Profesionales</a>
+				</li>
+				<li>
+					<a href="../html/client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i
+							class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href=""><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Ventas</a>
+						</li>
+						<li>
+							<a href="../html/servic.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Servicios</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+
+				</li>
+			</ul>
+		</div>
+	</section>
+
+
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar" style="background-color: #ac9c69;" >
+			<ul class="full-box list-unstyled text-right" >
+				<li class="pull-left">
+					<a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+				<li>
+					<a href="../html/search.html" class="btn-search">
+						<i class="zmdi zmdi-search"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Content page -->
+		<div class="container-fluid">
+			<div class="page-header">
+				<h1 class="text-titles"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> BUSCAR PROFESIONAL</h1>
+			</div>
+			<p class="lead">En esta sección se podra realizar la busqueda de un profesioanl registrado</p>
+		</div>
+
+		<div class="container-fluid">
+			<ul class="breadcrumb breadcrumb-tabs">
+				<li>
+					<a href="../html/profesio.html" class="btn btn-boton">
+						<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO PROFESIONAL
+					</a>
+				</li>
+				<li>
+					<a href="../html/profesi-list.html" class="btn btn-boton">
+						<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE PROFESIONAL
+					</a>
+				</li>
+				<li>
+					<a href="../html/profesi-search.html" class="btn btn-boton">
+						<i class="zmdi zmdi-search"></i> &nbsp; BUSCAR PROFESIONAL
+					</a>
+				</li>
+			</ul>
+		</div>
+
+
+		<div class="container-fluid">
+			<form class="well">
+				<div class="row">
+					<div class="col-xs-12 col-md-8 col-md-offset-2">
+						<div class="form-group label-floating">
+							<span class="control-label">¿A quién estas buscando?</span>
+							<input class="form-control" type="text" id="search_client_init" required="">
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<p class="text-center">
+							<button id="buscar-btn" type="submit" class="btn btn-boton "><i
+									class="zmdi zmdi-search"></i> &nbsp; Buscar</button>
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- Panel listado de busqueda de clientes -->
+		<div class="container-fluid">
+			<div class="panel panel-warning-light">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE PROFESIONALES
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-hover text-center">
+							<thead>
+								<tr>
+									<th class="text-center">ID</th>
+									<th class="text-center">Nombres</th>
+									<th class="text-center">Apellidos</th>
+									<th class="text-center">Especialización</th>
+									<th class="text-center">Email</th>
+									<th class="text-center">Telefono</th>
+									<th class="text-center">Dirección</th>
+									<th class="text-center">Estado</th>
+									<th class="text-center">Accion</th>
+
+								</tr>
+							</thead>
+							<tbody id="profesionales-body">
+								<!-- Aquí se mostrarán los datos de los profesionales -->
+							</tbody>
+
+						</table>
+					</div>
+					<nav class="text-center">
+						<ul class="pagination pagination-sm">
+							<li class="disabled"><a href="javascript:void(0)">«</a></li>
+							<li class="active"><a href="javascript:void(0)">1</a></li>
+							<li><a href="javascript:void(0)">2</a></li>
+							<li><a href="javascript:void(0)">3</a></li>
+							<li><a href="javascript:void(0)">4</a></li>
+							<li><a href="javascript:void(0)">5</a></li>
+							<li><a href="javascript:void(0)">»</a></li>
+						</ul>
+					</nav>
+					<form action="../php/export_excelProfesi.php" method="post">
+						<button type="submit" class="btn btn-boton">Exportar a Excel</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--====== Scripts -->
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/sweetalert2.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/material.min.js"></script>
+	<script src="../js/ripples.min.js"></script>
+	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/main.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			$.ajax({
+				url: '../php/profesionales.php', // Reemplaza 'ruta_a_tu_archivo_php.php' por la ruta correcta a tu archivo PHP
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+					// Limpiar el cuerpo de la tabla antes de agregar los nuevos datos
+					$('#profesionales-body').empty();
+
+					// Iterar sobre los datos recibidos y agregarlos a la tabla
+					$.each(data, function (index, profesional) {
+						$('#profesionales-body').append(
+							'<tr>' +
+							'<td>' + profesional.id + '</td>' +
+							'<td>' + profesional.nombre + '</td>' +
+							'<td>' + profesional.apellidos + '</td>' +
+							'<td>' + profesional.especializacion + '</td>' +
+							'<td>' + profesional.email + '</td>' +
+							'<td>' + profesional.telefono + '</td>' +
+							'<td>' + profesional.direccion + '</td>' +
+							'<td>' + profesional.estado + '</td>' +
+							'<td>' +
+							'<button class="btn btn-boton" onclick="actualizarProfesional(' + profesional.id + ')">Actualizar</button>' + // Botón para actualizar profesional
+							'<button class="btn btn-boton" onclick="eliminarProfesional(' + profesional.id + ')">Eliminar</button>' + // Botón para eliminar profesional
+							'</td>' +
+							'</tr>'
+						);
+					});
+				},
+				error: function () {
+					alert('Error al cargar los datos de profesionales.');
+				}
+			});
+
+			$("#buscar-btn").click(function () {
+				event.preventDefault(); // Prevenir el envío del formulario y la recarga de la página
+
+				var searchTerm = $("#search_client_init").val();
+
+				$.ajax({
+					url: "../php/buscar_profesional.php",
+					type: "POST",
+					dataType: 'json',
+					data: { search: searchTerm },
+					success: function (response) {
+						// Limpiar el cuerpo de la tabla antes de agregar los nuevos datos
+						$('#profesionales-body').empty();
+
+						// Iterar sobre los datos recibidos y agregarlos a la tabla
+						$.each(response, function (index, profesional) {
+							$('#profesionales-body').append(
+								'<tr>' +
+								'<td>' + profesional.id + '</td>' +
+								'<td>' + profesional.nombre + '</td>' +
+								'<td>' + profesional.apellidos + '</td>' +
+								'<td>' + profesional.especializacion + '</td>' +
+								'<td>' + profesional.email + '</td>' +
+								'<td>' + profesional.telefono + '</td>' +
+								'<td>' + profesional.direccion + '</td>' +
+								'<td>' + profesional.estado + '</td>' +
+								'<td>' +
+								'<button class="btn btn-boton" onclick="actualizarProfesional(' + profesional.id + ')">Actualizar</button>' +
+								'<button class="btn btn-boton" onclick="eliminarCliente(' + profesional.id + ')">Eliminar</button>' +
+								'</td>' +
+								'</tr>'
+							);
+						});
+					},
+					error: function (xhr, status, error) {
+                        console.error('Error:', error);
+                        console.error('Estado:', status);
+                        console.error('Respuesta completa:', xhr.responseText);
+						alert('Error al cargar los datos de clientes.');
+					}
+				});
+
+			});
+			
+
+
+
+		});
+		function actualizarProfesional(profesionalId) {
+				event.preventDefault(); // Prevenir el envío del formulario y la recarga de la página
+
+			// Realizar la solicitud AJAX para obtener los datos del profesional por su ID
+			$.ajax({
+				url: "../php/obtener_profesional.php",
+				type: "POST",
+				dataType: 'json',
+				data: { id: profesionalId },
+				success: function (profesional) {
+					// Crear los inputs con los datos del profesional
+					var htmlInputs = '<input type="text" id="nombre" class="swal2-input" value="' + profesional.nombre + '" placeholder="Nombre">' +
+						'<input type="text" id="apellidos" class="swal2-input" value="' + profesional.apellidos + '" placeholder="Apellidos">' +
+						'<input type="text" id="especializacion" class="swal2-input" value="' + profesional.especializacion + '" placeholder="Especiaización">' +
+						'<input type="text" id="email" class="swal2-input" value="' + profesional.email + '" placeholder="Email">' +
+						'<input type="text" id="telefono" class="swal2-input" value="' + profesional.telefono + '" placeholder="Teléfono">' +
+						'<input type="text" id="direccion" class="swal2-input" value="' + profesional.direccion + '" placeholder="Dirección">'
+
+					// Mostrar los inputs en un swal
+					swal({
+						title: 'Modificar Profesional',
+						html: htmlInputs,
+						showCancelButton: true,
+						confirmButtonText: 'Guardar Cambios',
+						cancelButtonText: 'Cancelar',
+						preConfirm: () => {
+							// Obtener los valores de los inputs
+							var nombre = $('#nombre').val();
+							var apellidos = $('#apellidos').val();
+							var especializacion = $('#especializacion').val();
+							var email = $('#email').val();
+							var telefono = $('#telefono').val();
+							var direccion = $('#direccion').val();
+
+							// Realizar la solicitud AJAX para actualizar los datos del profesional
+							return new Promise((resolve, reject) => {
+								$.ajax({
+									url: "../php/actualizar_profesional.php",
+									type: "POST",
+									dataType: 'json',
+									data: {
+										id: profesionalId,
+										nombre: nombre,
+										apellidos: apellidos,
+										especializacion: especializacion,
+										email: email,
+										telefono: telefono,
+										direccion: direccion,
+									},
+									success: function (response) {
+										console.log(response)
+										if (response.success) {
+											resolve(response); // Resolvemos la promesa si la actualización fue exitosa
+										} else {
+											reject('Error al intentar actualizar los datos del profesional.'); // Rechazamos la promesa si hay un error
+										}
+									},
+									error: function (xhr, status, error) {
+									console.error('Error:', error);
+									console.error('Estado:', status);
+									console.error('Respuesta completa:', xhr.responseText);
+									reject(`Error al intentar actualizar los datos del profesional: ${error}`); // Rechazamos la promesa si hay un error
+								}
+							});
+							});
+						}
+					}).then((result) => {
+						// Manejar cualquier operación adicional después de guardar los cambios
+						swal('Exito', "Se actualizo la información del profesional correctamente", 'success'); // Manejar el error si la promesa es rechazada
+
+						console.log(result); // Aquí puedes realizar cualquier operación adicional
+					}).catch((error) => {
+						swal('Error', error, 'error'); // Manejar el error si la promesa es rechazada
+					});
+				},
+				error: function () {
+					alert('Error al obtener los datos del profesional.');
+				}
+			});
+        }
+
+	</script>
+</body>
+
+</html>

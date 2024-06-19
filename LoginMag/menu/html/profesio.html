@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Profesionales</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				EMPRESA <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<img src="https://cdn-icons-png.freepik.com/512/7156/7156772.png?ga=GA1.1.475507919.1716614048" alt="UserIcon">
+					<figcaption class="text-center text-titles">MAG</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="../html/my-data.html" title="Mis datos">
+							<i class="zmdi zmdi-account-circle"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#!" title="Salir del sistema" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a href="../html/home.html">
+						
+						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
+					</a>
+				</li>
+				<li>
+					<a href="../html/profesio.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Profesionales</a>
+				</li>
+				<li>
+					<a href="../html/client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href=""><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Ventas</a>
+						</li>
+						<li>
+							<a href="../html/servic.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Servicios</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Content page-->
+	<section class="full-box dashboard-contentPage">
+		<!-- NavBar -->
+		<nav class="full-box dashboard-Navbar" style="background-color: #ac9c69;" >
+			<ul class="full-box list-unstyled text-right">
+				<li class="pull-left">
+					<a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+				</li>
+			</ul>
+		</nav>
+		
+		<!-- Content page -->
+		<div class="container-fluid">
+			<div class="page-header">
+			  <h1 class="text-titles"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> REGISTRAR PROFESIONALES</h1>
+			</div>
+			<p class="lead">En esta sección, se podran ingresar los datos personales de los profesionales para registrarlos en la plataforma</p>
+		</div>
+
+		<div class="container-fluid">
+			<ul class="breadcrumb breadcrumb-tabs">
+			  	<li>
+			  		<a href="../html/profesio.html" class="btn btn-boton">
+			  			<i class="zmdi zmdi-plus"></i> &nbsp; NUEVO PROFESIONAL
+			  		</a>
+			  	</li>
+			  	<li>
+			  		<a href="../html/profesi-list.html" class="btn btn-boton">
+			  			<i class="zmdi zmdi-format-list-bulleted"></i> &nbsp; LISTA DE PROFESIONALES
+			  		</a>
+			  	</li>
+			  	<li>
+			  		<a href="../html/profesi-search.html" class="btn btn-boton">
+			  			<i class="zmdi zmdi-search"></i> &nbsp; BUSCAR PROFESIONAL
+			  		</a>
+			  	</li>
+			</ul>
+		</div>
+
+		<!-- Panel nuevo profesional-->
+		<div class="container-fluid">
+			<div class="panel panel-warning-light">
+				<div class="panel-heading">
+					<h3 class="panel-title"><i class="zmdi zmdi-plus"></i> &nbsp; NUEVO PROFESIONAL</h3>
+				</div>
+				<div class="panel-body">
+					 <form id="registroForm" action="../php/registroprofesi.php" method="post">
+				    	<fieldset>
+				    		<legend><i class="zmdi zmdi-account-box"></i> &nbsp; Información del profesional</legend>
+				    		<div class="container-fluid">
+				    			<div class="row">
+				    				<div class="col-xs-12 col-sm-6">
+								    	<div class="form-group label-floating">
+										  	<label class="control-label">Nombres</label>
+										  	<input  pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" class="form-control" type="text" name="nombreprofe" required="" maxlength="30">
+										</div>
+				    				</div>
+
+				
+				    				<div class="col-xs-12 col-sm-6">
+								    	<div class="form-group label-floating">
+										  	<label class="control-label">Apellidos</label>
+										  	<input  pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" class="form-control" type="text" name="apellidosprofe" required="" maxlength="30">
+										</div>
+				    				</div>
+				    				<div class="col-xs-12 col-sm-6">
+								    	<div class="form-group label-floating">
+										  	<label class="control-label">Especialización</label>
+										  	<input  pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+" class="form-control" type="text" name="especializacionprofe" required="" maxlength="30">
+										</div>
+				    				</div>
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+										  	<label class="control-label">Email</label>
+											  <input id="email" class="form-control" type="email" name="emailprofe" required="" maxlength="100">
+											</div>
+										</div>
+				    	
+				    				<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+										  	<label class="control-label">Teléfono</label>
+										  	<input pattern="[0-9+]{1,15}" class="form-control" type="text" name="telefonoprofe"  required="" maxlength="15">
+										</div>
+				    				</div>
+				    				<div class="col-xs-12 col-sm-6">
+										<div class="form-group label-floating">
+										  	<label class="control-label">Dirección</label>
+										  	<input pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚñÑ\s#-]+(?:\s[A-Za-záéíóúÁÉÍÓÚñÑ0-9#-]+)+"  class="form-control" type="direccion" name="direccionprofe" required="" maxlength="30">
+										</div>
+				    				</div>
+								</div>
+									<div class="col-xs-12 col-sm-6">
+										<div class="form-group">
+											<label class="control-label">Estado</label>
+											<div class="radio radio-primary">
+												<label>
+													<input type="radio" name="estadoprofe" id="activoprofe" value="activo" checked="">
+													<i class="zmdi zmdi-male-alt"></i> &nbsp; Activo
+												</label>
+											</div>
+											<div class="radio radio-primary">
+												<label>
+													<input type="radio" name="estadoprofe" id="inactivoprofe" value="inactivo">
+													<i class="zmdi zmdi-female"></i> &nbsp; Inactivo
+												</label>
+											</div>
+										</div>
+				    				</div>
+				    			</div>
+				    		</div>
+				    	</fieldset>
+						<p class="text-center" style="margin-top: 20px;">
+							<input type="submit" value="Registrar" class="btn btn btn-boton">
+						</p>
+						
+				    </form>
+
+					
+				</div>
+			</div>
+		</div>
+
+	</section>
+	
+	<!--====== Scripts -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/sweetalert2.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/material.min.js"></script>
+<script src="../js/ripples.min.js"></script>
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/main.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$('#registroForm').submit(function(e) {
+			e.preventDefault(); // Evita que se envíe el formulario de forma tradicional
+
+			$.ajax({
+				type: 'POST',
+				url: '../php/registroprofesi.php',
+				data: $(this).serialize(),
+				dataType: 'json',
+				success: function(response) {
+					if (response.success) {
+						// Mostrar alerta de éxito
+						swal("¡Registro exitoso!", response.message, "success");
+						// O puedes usar el alert estándar de JavaScript:
+						// alert(response.message);
+					} else {
+						// Mostrar alerta de error
+						swal("Error", response.message, "error");
+					}
+				},
+				error: function(xhr, status, error) {
+					// Manejar errores de la petición AJAX
+					swal("Error", "Error en la solicitud AJAX", "error");
+				}
+			});
+		});
+	});
+</script>
+
+<script>
+    $.material.init();
+</script>
+
+
+</body>
+</html>
+
+	

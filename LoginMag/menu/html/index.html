@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="../css/estilos.css" rel="stylesheet" type="text/css">
+    <title>Login de Usuario</title>
+</head>
+<body>
+
+ 
+
+<div class="container mt-5">
+    
+
+    
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <div class="box">
+                <div class="card shadow-lg">
+                    <div class="card-body text-center">
+                        <img src="https://cdn-icons-png.freepik.com/512/7156/7156772.png?ga=GA1.1.475507919.1716614048" class="rounded-circle img-fluid mb-4" style="width: 100px; height: 100px;">
+                        <h2 class="mb-4" >BIENVENIDO</h2>
+                        <!-- Div para mostrar mensajes de error -->
+                        <div id="errorContainer"></div>
+                         <form name="form" action="../php/sesion.php" method="POST" onsubmit="return validateForm()">
+                            <div class="form-group">
+                              
+                                <input type="text" name="user" class="form-control" placeholder="Usuario" maxlength="30" required>
+                            </div>
+                            <div class="form-group">
+                               
+                                <input type="password" name="pass" class="form-control" placeholder="Contraseña" required>
+                            </div>
+                            <div class="form-group">
+                                
+                              <input type="submit" name="entrar" class="submit" value="INGRESAR" style="font-weight: bold; color: rgb(92, 87, 87);">
+                          </div>
+                        </form>
+                        <div class="mt-3">
+                            <span>¿No tienes una cuenta? /</span> 
+                            <a href="../html/Register.html" class="text-muted font-weight-bold">Regístrate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript y Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-3vA9w0SjgQaO9ju7Vgt+k9z/rACNrIo9fKzHUZlTzNsQWW0Zv8RdZw8OKGgG7PRD" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<!-- JavaScript para validación -->
+<script>
+    function validateForm() {
+        var user = document.forms["form"]["user"].value;
+        var pass = document.forms["form"]["pass"].value;
+        if (user.length < 3 || user.length > 30) {
+            showAlert('danger', 'Error', 'El usuario y la contraseña deben tener entre 4 y 30 caracteres.');
+            return false;
+        }
+        return true;
+    }
+
+    function showAlert(type, title, message) {
+        var alertDiv = '<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">' +
+            '<strong>' + title + ':</strong> ' + message +
+            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</button>' +
+            '</div>';
+        document.getElementById('errorContainer').innerHTML = alertDiv;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Inicio</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="../css/main.css">
+	<link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zmdi/2.2.0/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-wHnb4bDnS1w+0HDxiJFwLd6JGJ9ZQjogEiU9C0U7P0SPz/b2u8RZQ0N9eK+e61Hw3L74axCzChy5B7gSO56X8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
+		#calendar {
+			max-width: 400px;
+			margin: 20px auto;
+		}
+		.stats-box {
+			padding: 20px;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.chart-container {
+			width: 100%;
+			height: 400px;
+		}
+		#map {
+			height: 400px;
+			width: 100%;
+		}
+		.side-section {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+		.side-section > div {
+			width: 48%;
+		}
+		.stats-box {
+				transition: all 0.3s;
+			}
+		
+		.stats-box:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				background-color: #0979db !important; /* Cambia el color de fondo al seleccionado */
+				cursor: pointer; /* Cambia el cursor al pasar sobre el cuadro */
+		
+				
+			}
+	
+	</style>
+	
+</head>
+
+<body>
+	
+	<!-- SideBar -->
+	<section class="full-box cover dashboard-sideBar">
+		<div class="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
+		<div class="full-box dashboard-sideBar-ct">
+			<!--SideBar Title -->
+			<div class="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
+				EMPRESA <i class="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
+			</div>
+			<!-- SideBar User info -->
+			<div class="full-box dashboard-sideBar-UserInfo">
+				<figure class="full-box">
+					<img src="https://cdn-icons-png.freepik.com/512/7156/7156772.png?ga=GA1.1.475507919.1716614048" alt="UserIcon">
+					<figcaption class="text-center text-titles">MAG</figcaption>
+				</figure>
+				<ul class="full-box list-unstyled text-center">
+					<li>
+						<a href="../html/my-data.html" title="Mis datos">
+							<i class="zmdi zmdi-account-circle"></i>
+						</a>
+					</li>
+					<li>
+						<a href="#!" title="Salir del sistema" class="btn-exit-system">
+							<i class="zmdi zmdi-power"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- SideBar Menu -->
+			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
+				<li>
+					<a href="../html/home.html">
+						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
+					</a>
+				</li>
+				<li>
+					<a href="../html/profesio.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Profesionales</a>
+				</li>
+				<li>
+					<a href="../html/client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+				</li>
+				<li>
+					<a href="#!" class="btn-sideBar-SubMenu">
+						<i class="zmdi zmdi-case zmdi-hc-fw"></i> Administración <i class="zmdi zmdi-caret-down pull-right"></i>
+					</a>
+					<ul class="list-unstyled full-box">
+						<li>
+							<a href=""><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Ventas</a>
+						</li>
+						<li>
+							<a href="../html/servic.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Servicios</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Content page-->
+<section class="full-box dashboard-contentPage">
+    <!-- NavBar -->
+    <nav class="full-box dashboard-Navbar" style="background-color: rgb(226, 163, 45);">
+        <ul class="full-box list-unstyled text-right">
+            <li class="pull-left">
+                <a href="#!" class="btn-menu-dashboard"><i class="zmdi zmdi-more-vert"></i></a>
+            </li>
+        </ul>
+	
+    </nav>
+
+	<div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="stats-box bg-info text-white rounded p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-3">
+                            <i class="zmdi zmdi-accounts-list-alt zmdi-hc-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Profesionales</h4>
+                            <p id="profesionales">Cargando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="stats-box bg-success text-white rounded p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-3">
+                            <i class="zmdi zmdi-account zmdi-hc-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Clientes</h4>
+                            <p id="clientes">Cargando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="stats-box bg-warning text-white rounded p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-3">
+                            <i class="zmdi zmdi-wrench zmdi-hc-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Servicios</h4>
+                            <p id="servicios">Cargando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="stats-box bg-danger text-white rounded p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="mr-3">
+                            <i class="zmdi zmdi-money zmdi-hc-3x"></i>
+                        </div>
+                        <div>
+                            <h4>Ventas</h4>
+                            <p id="ventas">Cargando...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Gráficas -->
+<div class="col-md-6 mb-4">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Estadísticas de Ingresos</h5>
+            <div class="chart-container" style="height: 300px; width: 100%;">
+                <canvas id="incomeChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cantidad de Empleados, Clientes y Servicios -->
+<div class="container">
+	<div class="row">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Cantidad de Empleados, Clientes y Servicios</h5>
+					<div class="chart-container" style="height: 300px; width: 100%;">
+						<canvas id="employeesClientsServicesChart"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Calendario -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Calendario de Tareas</h5>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lista de Tareas -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body" style="height: 460px; width: 100%;">
+                    <h5 class="card-title">Lista de Tareas</h5>
+					<form id="taskForm">
+						<div class="form-group">
+							<label for="taskName">Nombre de la tarea:</label>
+							<input type="text" class="form-control" id="taskName" name="taskName" required>
+						</div>
+						<div class="form-group">
+							<label for="taskDate">Fecha de la tarea:</label>
+							<input type="date" class="form-control" id="taskDate" name="taskDate" required>
+						</div>
+						<button type="submit" class="btn btn-primary">Agregar tarea</button>
+					</form>
+					
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla para mostrar las tareas -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tabla de Tareas</h5>
+                    <table id="taskTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre de la Tarea</th>
+                                <th>Fecha</th>
+                                <th>Accion</th> <!-- Espacio para el botón de eliminar -->
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody">
+                            <!-- Aquí se agregarán dinámicamente las tareas -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+	</section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Scripts -->
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="../js/sweetalert2.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/material.min.js"></script>
+	<script src="../js/ripples.min.js"></script>
+	<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		$.material.init();
+	</script>
+
+	<script src="../js/graficos.js"></script>
+    <script src="../js/calendario.js"></script>
+	
+		<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+	</body>
+	</html>
+	
+

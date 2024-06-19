@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+/* Estilos Globales */
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Estilos del Cuerpo */
+body {
+    font-family: 'Exo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(../assets/img/fondo.jpeg);
+ 
+}
+
+/* Estilos de la Tarjeta */
+.card {
+    margin-bottom: 30px;
+    border: none;
+    background: rgba(255, 255, 255, 0.6); /* Fondo blanco semitransparente */
+    border-radius: 24px;
+    padding: 20px; /* Añade relleno para separar el contenido del borde */
+   
+}
+
+/* Estilos del Texto */
+h2.mb-4 {
+    font-family: Mención deshonrosa (Comic Sans);
+            font-weight: bold; /* Para hacer la fuente más gruesa */
+            font-size: 35px; /* Ajusta el tamaño de la fuente según sea necesario */
+          
+}
+
+/* Estilos de la Caja */
+
+/* Estilos de la Caja */
+.box input[type="text"],
+.box input[type="password"],
+.box input[type="email"] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #cbcbcb;
+    outline: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    padding: 5px 0;
+    background-color: transparent; /* Para que el fondo sea transparente */
+    transition: border-color 0.3s; /* Transición para el cambio de color */
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus,
+.box input[type="email"]:focus {
+    border-bottom: 3px solid rgb(231, 202, 147); /* Color de la línea al enfocar */
+}
+
+/* Estilos cuando el campo tiene valor */
+.box input[type="text"]:not(:placeholder-shown),
+.box input[type="password"]:not(:placeholder-shown),
+.box input[type="email"]:not(:placeholder-shown) {
+    border-bottom: 3px solid rgb(226, 163, 45); /* Color de la línea cuando el campo tiene valor */
+    background-color: transparent; /* Mantener fondo transparente */
+}
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px  #141413;;
+    padding: 14px 40px;
+    outline: none;
+    color: rgb(39, 38, 37);
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    background: #bda98c;
+}
+
+.box input[type="submit"]:hover {
+    background: transparent;
+    border: 3px solid  #db9f44; /* Color de la línea al enfocar */
+}
+
+.forgot {
+    text-decoration: underline;
+}
+
